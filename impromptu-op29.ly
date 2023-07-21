@@ -206,7 +206,7 @@ rightHandLower = \relative {
   \tuplet 3/2 { df8 c( df } ff4)~ \tuplet 3/2 { ff8 d( ef } bf'4~ |
   \tuplet 3/2 { bf8 df, ef \slashedGrace { g8 } f ef df  ef bf df } c4->)~ |
   \tuplet 3/2 { 
-    c8\slurShapeA ( g af  c bf af  g bf c  df f ef |
+    c8-\slurShapeA ( g af  c bf af  g bf c  df f ef |
     c8 g af  c bf af  g bf c  df f ef |
     c8 b c  \voiceTwo ff8 bf, cf  ef a, bf  eff af, bff | 
     df8 g, af  eff' af, bff  df g, af  c fs, g |
@@ -221,7 +221,7 @@ rightHandLower = \relative {
   \tuplet 3/2 { ef,8->[(\prall d ef  c' bf af]  a gf' e }  f4) |
   \tuplet 3/2 { 
     bf,8->[(\prall a bf  af' fs g]  c,->[\prall b c  bf' g af]) |
-    d,8->\slurShapeB ( ef f  g af a  bf c df  d f ef |
+    d,8->-\slurShapeB ( ef f  g af a  bf c df  d f ef |
     \ottava 1 ef8 c'-> df,-1  bf'-> c,-1 af'->  bf,-1 g'-> af,-1
       f'-> g,-1 e'-> |
     c8-2 af'-> bf,-1  g'-> af,-1 f'-> \ottava 0 gf, ef'-> f,  df'-> ef, c'-> |
@@ -256,7 +256,7 @@ rightHandLower = \relative {
     \stemNeutral |
   c2) d( |
   e2 d4. c8 |
-  d2) g,2*1/4->\slurShapeC ( \magnifyMusic 0.63 { \tuplet 13/3 { 
+  d2) g,2*1/4->-\slurShapeC ( \magnifyMusic 0.63 { \tuplet 13/3 { 
     \stemUp g8[ a g fs g b' af g f d e a, bf] } } \stemNeutral |
   
   \barNumberCheck 49
@@ -275,7 +275,7 @@ rightHandLower = \relative {
   af2..) c,8( |
   \undo \omit TupletNumber
   \tuplet 13/8 { df8->\prall c c' b bf g e df c d e f g } |
-  af4) r \grace { g16\slurShapeD ^([ a] } \afterGrace 7/8 { \moveTrillSpanA
+  af4) r \grace { g16-\slurShapeD ^([ a] } \afterGrace 7/8 { \moveTrillSpanA
     a2->\startTrillSpan } { g16[\stopTrillSpan a] } |
   \afterGrace 7/8 { \moveTrillSpanB bf2->\startTrillSpan } 
                   { af16[\stopTrillSpan bf] } 
@@ -304,7 +304,7 @@ rightHandLower = \relative {
   af2.) r8 c,( |
   \omit TupletNumber
   \tuplet 3/2 { c'8 c, cs  d df' <ef, ef'>  e' ef, f  fs g g' } |
-  <af, af'>4) r \slashedGrace { a8 \slurShapeE ^( } \afterGrace 7/8 { 
+  <af, af'>4) r \slashedGrace { a8-\slurShapeE ^( } \afterGrace 7/8 { 
     \moveTrillSpanD a2->\startTrillSpan } { gs16[\stopTrillSpan a] } |
   \afterGrace 7/8 { \moveTrillSpanE bf2->\startTrillSpan } 
                   { af16[\stopTrillSpan bf] } 
@@ -339,7 +339,7 @@ rightHandLower = \relative {
   \tuplet 3/2 { df8 d ef } ff4~ \tuplet 3/2 { ff8 d ef } bf'4~ |
   \tuplet 3/2 { bf8 df, ef  \slashedGrace { g } f ef df  ef bf df } c4)~ |
   \tuplet 3/2 { 
-    c8\slurShapeF ( g af  c bf af  g bf c  df f ef |
+    c8-\slurShapeF ( g af  c bf af  g bf c  df f ef |
     c8 g af  c bf af  g bf c  df f ef |
   
     \barNumberCheck 97
@@ -353,7 +353,7 @@ rightHandLower = \relative {
   \tuplet 3/2 { ef,8->[(\prall d ef  c' bf af]  a gf' e } f4) |
   \tuplet 3/2 { 
     bf,8->[(\prall a bf  af' fs g])  c,->[(\prall b c  bf' g af]) |
-    d,->\slurShapeG ( ef f  g af a  bf c df  d f ef |
+    d,->-\slurShapeG ( ef f  g af a  bf c df  d f ef |
     
     \barNumberCheck 105
     \ottava 1 ef c'-> df,  bf'-> c, af'->  bf, g'-> af,  f'-> g, e'-> |
@@ -369,11 +369,11 @@ rightHandLower = \relative {
   \tuplet 3/2 { df c ef  dff cf e } f8) \oneVoice r\fermata <df, g>4->^( |
   
   \barNumberCheck 113
-  <c af'>8) r \voiceTwo g'4\slurShapeH ^( \tuplet 3/2 { af8 ef af } g4 |
+  <c af'>8) r \voiceTwo g'4-\slurShapeH ^( \tuplet 3/2 { af8 ef af } g4 |
   \tuplet 3/2 { af8 ef af } g4 \tuplet 3/2 { af8 ef af } g4 |
   \oneVoice <af af'>8-.) r <c, e g>4^( <c f af> <df g bf> |
   <c af' c>4 <c e g> <c f af> <df g bf> |
-  <c af' c>8-!) r \voiceTwo g'4\slurShapeI ^( \tuplet 3/2 { af8 ef af } g4 |
+  <c af' c>8-!) r \voiceTwo g'4-\slurShapeI ^( \tuplet 3/2 { af8 ef af } g4 |
   \tuplet 3/2 { af8 ef af } g4 \tuplet 3/2 { af8 ef af } g4 |
   \oneVoice <af ef' c'>8-.)\arpeggio r <c, e g>4^( <c f af> <df g bf> |
   <c af' c>4 <c e g> <c f af> <df g bf> |
@@ -564,7 +564,7 @@ leftHandLower = \relative {
   % The MS says it's a df, but this makes an horribly dissonant chord. The
   % two other sources agree that it is a df, SrcA has an a natural pinceled in.
   % SrcB has an a-natural in print.  This still makes a very dissonant chord.
-  <f' a d>4 f,-.) <g' b f'>\slurShapeJ ( g,-. |
+  <f' a d>4 f,-.) <g' b f'>-\slurShapeJ ( g,-. |
   
   \barNumberCheck 49
   \voiceFour g'2 af |
@@ -733,7 +733,7 @@ dynamics = {
   s4 s2.\< |
   s2... s16\! |
   s1 |
-  s2 s\tweak X-offset -1.5 ^\ritenuto |
+  s2 s-\tweak X-offset -1.5 ^\ritenuto |
   s1 % \p | <-- retstore "P"
   s1 |
   
@@ -757,17 +757,17 @@ dynamics = {
   
   \barNumberCheck 65
   s1 |
-  s2. s4\tweak X-offset -1 ^\mv |
+  s2. s4-\tweak X-offset -1 ^\mv |
   s2...\< s16\! |
   s1 |
   s4\p s2\< s8. s16\! |
   s1 |
   s1^\dolciss
-  s2 s\tweak X-offset -2 ^\conForza |
+  s2 s-\tweak X-offset -2 ^\conForza |
   
   \barNumberCheck 73
   s1 |
-  s2.. s8\tweak X-offset -2.5 ^\mv |
+  s2.. s8-\tweak X-offset -2.5 ^\mv |
   s4 s2\< s8 s\! |
   s1 |
   s2...\f\< s16\! | 
