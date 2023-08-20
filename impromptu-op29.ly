@@ -190,13 +190,20 @@ rightHandLower = \relative {
   \tuplet 3/2 { ef'8->[(\prall d ef  c' bf af]  g f' e }  ef4) |
   \tuplet 3/2 { ef,8->[(\prall d ef  c' bf af]  g f' e }  ef4) |
   \tuplet 3/2 {
-    ef8(\prall d ef  c' g bf  af e g  f c e |
+    % For the last note of measure 3, MS and SrcA have an E-natural, but SrcB
+    % has an E-flat. The E-flat is the more likely choice, the since previous
+    % E-natural in the measure serves as a chromatic neighbor, and the last
+    % note of measure has a more melodic function.
+    ef8(\prall d ef  c' g bf  af e g  f c ef |
     df8 f, g  af c bf  af f af  g d f) |
   }
   \tuplet 3/2 { ef8->[(\prall d ef  c' bf af]  g f' e }  ef4) |
   \tuplet 3/2 { ef,8->[(\prall d ef  c' bf af]  g f' e }  ef4) |
   \tuplet 3/2 { 
-    ef8(\prall d ef  e f fs  g g' df  ef b c |
+    % For the third note of beat 3, MS and SrcA have D-flat (no accidental),
+    % but SrcB has a D-natural. It is likely that Chopin intended to add the
+    % natural sign, since the note makes more sense as a chromatic neighbor.
+    ef8(\prall d ef  e f fs  g g' d  ef b c |
     g8 bf af  f c d  ef bf b  c cs d |
   }
   
@@ -257,7 +264,12 @@ rightHandLower = \relative {
   c2) d( |
   e2 d4. c8 |
   d2) g,2*1/4->-\slurShapeC ( \magnifyMusic 0.63 { \tuplet 13/3 { 
-    \stemUp g8[ a g fs g b' af g f d e a, bf] } } \stemNeutral |
+    % For the seventh note of this fioritura, MS and SrcA have an A-flat (no
+    % accidental), but SrcB has an A-natural. Also for the final note, MS and
+    % SrcA have a B-flat (no accidental), but SrcB has a B-natural. Given that
+    % two other A-naturals and one other B-natural exist in this figure, it is
+    % more likely that the natural sign was omitted by mistake for both notes.
+    \stemUp g8[ a g fs g b' a g f d e a, b] } } \stemNeutral |
   
   \barNumberCheck 49
   \textUnderSlur c1)~^\ten |
@@ -278,7 +290,9 @@ rightHandLower = \relative {
   af4) r \grace { g16-\slurShapeD ^([ a] } \afterGrace 7/8 { \moveTrillSpanA
     a2->\startTrillSpan } { g16[\stopTrillSpan a] } |
   \afterGrace 7/8 { \moveTrillSpanB bf2->\startTrillSpan } 
-                  { af16[\stopTrillSpan bf] } 
+  % The intended final two notes of the trill might have been { a16 bf }
+  % instead of { af16 bf }. See commentary at mUltimate Chopin.
+                  { af16[\stopTrillSpan bf] }
     \afterGrace 7/8 { \moveTrillSpanC b2->\startTrillSpan } 
                     { as16[\stopTrillSpan b] } |
   c4-.) r df2->( |
@@ -292,7 +306,21 @@ rightHandLower = \relative {
   \tuplet 3/2 { df8 c d  c ef c  e c f  c g' c, } |
   af'2..) g8( |
   \undo \omit TupletNumber
-  \tuplet 15/8 { g8 af g fs g bf af e g fs c e df f, g) } |
+  %% Resolving a difference between editions:
+  % For the 10th note of this tuplet, MS and SrcA have an F-sharp (no
+  % accidental), but SrcB has an F-natural. It is likely that the natural sign
+  % was intended, because the F-sharp earlier in the measure is a chromatic
+  % neighbor, but this F has a melodic function. Given that two other
+  % A-naturals and one other B-natural exist in this figure, it is more likely
+  % that the natural sign was omitted by mistake for both notes.
+  %
+  %% Correction:
+  % Change the 12th note of tuplet to E-flat instead of E-natural; the
+  % E-natural -> D-flat interval is a descending augmented second, which is
+  % unlikely in this context from a melodic perspective. Later editions and
+  % resources I have consulted (Paderewski 30th edition, and the mUltimate
+  % Chopin site) make this correction.
+  \tuplet 15/8 { g8 af g fs g bf af e g f c ef df f, g) } |
   <af c>4 r <ef' c'>2-> |
   
   \barNumberCheck 73
@@ -303,24 +331,35 @@ rightHandLower = \relative {
   \tuplet 3/2 2 { df4->\trill c d e f g } |
   af2.) r8 c,( |
   \omit TupletNumber
-  \tuplet 3/2 { c'8 c, cs  d df' <ef, ef'>  e' ef, f  fs g g' } |
+  % In MS and SrcA, the second note in beat 2 is D-flat, and the second note in
+  % beat 3 is E-flat. A natural sign was added for both notes in SrcB. The
+  % natural signs were a likely omission, given the context of the chromatic
+  % passage with octave chords and octave leaps, so follow SrcB.
+  \tuplet 3/2 { c'8 c, cs  d d' <ef, ef'>  e' e, f  fs g g' } |
   <af, af'>4) r \slashedGrace { a8-\slurShapeE ^( } \afterGrace 7/8 { 
     \moveTrillSpanD a2->\startTrillSpan } { gs16[\stopTrillSpan a] } |
   \afterGrace 7/8 { \moveTrillSpanE bf2->\startTrillSpan } 
-                  { af16[\stopTrillSpan bf] } 
+  % The intended final two notes of the trill might have been { a16 bf }
+  % instead of { af16 bf }. See commentary at mUltimate Chopin.
+                  { af16[\stopTrillSpan bf] }
     \afterGrace 7/8 { \moveTrillSpanF b2->\startTrillSpan }
                     { as16[\stopTrillSpan b] } |
   \ottava 1 \slashedGrace { c8*1/128 } <c c'>4-!)\arpeggio r <df df'>2-> |
   
   \barNumberCheck 81
-  \tuplet 17/16 { c16->( c' b bf g e c b \ottava 0 bf g e c b bf g ef df) } |
+  % In MS and SrcA, the final E of this tuplet is an E-flat, but in SrcB it is
+  % an E-natural. It is likely that the natural sign was omitted by mistake,
+  % since all other E notes in this measure are E-naturals.
+  \tuplet 17/16 { c16->( c' b bf g e c b \ottava 0 bf g e c b bf g e df) } |
   \afterGrace 7/8 c2->\startTrillSpan { b16[\stopTrillSpan c] } 
     \afterGrace 7/8 df4->\trill { c16[ df] } 
     \afterGrace 7/8 d4->\trill { cs16[ d] } |
   \tuplet 3/2 { ef8->[(\prall d ef  c' bf af]  g f' e }  ef4) |
   \tuplet 3/2 { ef,8->[(\prall d ef  c' bf af]  g f' e }  ef4) |
   \tuplet 3/2 {
-    ef8(\prall d ef  c' g bf  af e g  f c e |
+    % The sources differ on whether the last note in the measure should be
+    % E-natural or E-flat. See inline comment for measure 3 for background.
+    ef8(\prall d ef  c' g bf  af e g  f c ef |
     df8 f, g  af c bf  af f af  g d f) |
   }
   \tuplet 3/2 { ef8->[(\prall d ef  c' bf af]  g f' e }  ef4) |
@@ -328,7 +367,9 @@ rightHandLower = \relative {
   
   \barNumberCheck 89
   \tuplet 3/2 { 
-    ef8(\prall d ef  e f fs  g g' df  ef b c |
+    % The sources differ on whether the third note of beat 3 sure should be
+    % D-natural or D-flat. See inline comment for measure 7 for background.
+    ef8(\prall d ef  e f fs  g g' d  ef b c |
     g8 bf af  f c d  ef bf b  c cs d |
   }
   \tuplet 3/2 { ef8 e f }  gf4)~  \tuplet 3/2 { gf8( e f } c'4~ |
@@ -438,7 +479,16 @@ leftHandUpper = \relative {
   s1 * 8 |
   
   \barNumberCheck 49
-  <c' e>4 c, f' c, |
+  % In SrcA, beat 3 contains a single note, F. In SrcB, the beat contains a
+  % chord containing the C below that F (<C F>). In MS, one could argue for the
+  % presence or absence of the C; if it's present, the note is barely visible,
+  % due to the thickness of the stem and ledger line at that point. Because
+  % this voice umambiguously has a chord on beats 1 and 3 in the following
+  % measure, and this measure has similar figuration, follow SrcB (and
+  % debatably MS) in this case.
+  <c' e>4 c, <c' f> c, |
+  % The first chord of the measure was likely intended to be <c d> instead of
+  % <c df>. See commentary at mUltimate Chopin.
   <c' df>4 c, <c' f> c, |
   s1 |
   af'4( c <af f'> c) |
@@ -585,7 +635,12 @@ leftHandLower = \relative {
   \voiceFour f,1 |
   f1~ |
   f2 ef |
-  \oneVoice <d f f'>4( bf') <d, af' f'>( b') |
+  % In MS and SrcB, the lowest chord note on beat 3 is a D-flat, but in SrcA it
+  % is a D-natural (no accidental). It was likely an oversight in SrcA to not
+  % add the flat sign, so follow MS and SrcB.
+  \oneVoice <d f f'>4( bf') <df, af' f'>( b') |
+  % The notes on beats 3 and 4 were likely intended to be { A-flat, F } instead
+  % of { C, A-flat }. See commentary at mUltimate Chopin.
   <c, af' f'>4->( c' c' af) |
   
   \barNumberCheck 65
@@ -631,7 +686,16 @@ leftHandLower = \relative {
     
     \barNumberCheck 97
     af8 ef' c  af ff' cf  g ef' bf  gf eff' bff |
-    f8 df' af  gf eff' bff  f df' af  e c' gf |
+    %% Correction:
+    % Change the last note of the measure to G-natural, aligning with the
+    % G-natural in the right hand. None of the listed source editions add the
+    % natural sign, but it is a near certainty that this was an oversight,
+    % given the repeated figurations that weave up and down chromatically in
+    % the preceding beats. Interestingly, mUltimate Chopin describes its
+    % addition of a natural sign here as "cautionary", but because G-flat
+    % appears earlier in the measure, probably more accurate to label it as an
+    % oversight (missing accidental).
+    f8 df' af  gf eff' bff  f df' af  e c' g |
     ds8 b' fs  e c' g  ef cf' gf  d bf' f |
     df8 bf' f  bf, df' f,  ef c' af  ef df' g, |
     af,8 c' ef,  d c' ef,  bf df' ef,  d df' ef, |
