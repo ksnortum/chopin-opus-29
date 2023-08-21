@@ -11,7 +11,11 @@
   source = "https://s9.imslp.org/files/imglnks/usimg/0/06/IMSLP842145-PMLP2262-Op29-manuscript.pdf" % MS
   source = "https://s9.imslp.org/files/imglnks/usimg/c/c9/IMSLP399452-PMLP02262-BnF_btv1b52500459z.pdf" % SrcA
   source = "https://vmirror.imslp.org/files/imglnks/usimg/b/b8/IMSLP447371-PMLP02262-Chopin_F_-_Impromptu_pour_le_pianoforte_op._29_(colour).pdf" % SrcB
-  % Differences in the sources are discussed inline. 
+  source = "https://sm.multimatechopin.com/en/composition/1/annotation/transcription" % mUltimate
+  % Differences in the sources are discussed inline.
+  title = "Impromptu"
+  composer = "Frédéric Chopin"
+  opus = "Opus 29"
   copyright = \markup { 
     \center-column {
       "Copyright © 2023 Knute Snortum. This work is licensed under the" 
@@ -292,7 +296,7 @@ rightHandLower = \relative {
   \afterGrace 7/8 { \moveTrillSpanB bf2->\startTrillSpan } 
   % The intended final two notes of the trill might have been { a16 bf }
   % instead of { af16 bf }. See commentary at mUltimate Chopin.
-                  { af16[\stopTrillSpan bf] }
+                  { a16[\stopTrillSpan bf] }
     \afterGrace 7/8 { \moveTrillSpanC b2->\startTrillSpan } 
                     { as16[\stopTrillSpan b] } |
   c4-.) r df2->( |
@@ -341,7 +345,7 @@ rightHandLower = \relative {
   \afterGrace 7/8 { \moveTrillSpanE bf2->\startTrillSpan } 
   % The intended final two notes of the trill might have been { a16 bf }
   % instead of { af16 bf }. See commentary at mUltimate Chopin.
-                  { af16[\stopTrillSpan bf] }
+                  { a16[\stopTrillSpan bf] }
     \afterGrace 7/8 { \moveTrillSpanF b2->\startTrillSpan }
                     { as16[\stopTrillSpan b] } |
   \ottava 1 \slashedGrace { c8*1/128 } <c c'>4-!)\arpeggio r <df df'>2-> |
@@ -377,7 +381,7 @@ rightHandLower = \relative {
   % First three eighth-notes, sources differ, below is MS, but doesn't follow
   % the pattern.  SrcA has df c df which is the phrase from the earlier
   % passage, SrcB follows the MS
-  \tuplet 3/2 { df8 d ef } ff4~ \tuplet 3/2 { ff8 d ef } bf'4~ |
+  \tuplet 3/2 { df8 c df } ff4~ \tuplet 3/2 { ff8 d ef } bf'4~ |
   \tuplet 3/2 { bf8 df, ef  \slashedGrace { g } f ef df  ef bf df } c4)~ |
   \tuplet 3/2 { 
     c8-\slurShapeF ( g af  c bf af  g bf c  df f ef |
@@ -489,7 +493,7 @@ leftHandUpper = \relative {
   <c' e>4 c, <c' f> c, |
   % The first chord of the measure was likely intended to be <c d> instead of
   % <c df>. See commentary at mUltimate Chopin.
-  <c' df>4 c, <c' f> c, |
+  <c' d>4 c, <c' f> c, |
   s1 |
   af'4( c <af f'> c) |
   <g bf>4( c <bf e> c) |
@@ -566,8 +570,8 @@ leftHandLower = \relative {
     f8 c' af  bf, d' af  ef ef' bf g ef' bf |
     af8 ef' c  f, d' bf  ef, ef' bf  g ef' bf |
     af8 ef' c  af ff' cf  g ef' bf  gf eff' bff |
-    % last eight-note, gf in MS, g in SrcA, gf in SrcB
-    f8 df' af  gf eff' bff  f df' af  e c' gf |
+    % last eight-note, gf in MS, g in SrcA, gf in SrcB, g in mUltilmate
+    f8 df' af  gf eff' bff  f df' af  e c' g |
     
     \barNumberCheck 17
     ds8 b' fs  e c' g  ef cf' gf  d bf' f |
@@ -1075,6 +1079,14 @@ tempi = {
   \tempo 4 = 84 s1 |
 }
 
+forceBreaks = {
+  s1 * 18 \pageBreak
+  s1 * 16 \pageBreak
+  s1 * 28 \pageBreak
+  s1 * 23 \pageBreak
+  s1 * 18 \pageBreak
+}
+
 %%% Output
 
 \paper {
@@ -1100,7 +1112,7 @@ tempi = {
 \layout {
   \context {
     \Score
-    \omit BarNumber
+    % \omit BarNumber <-- uncomments me
     \override Slur.details.free-head-distance = 1
   }
   \context {
@@ -1138,6 +1150,7 @@ tempi = {
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand
     \new Dynamics \pedal
+    \new Devnull \forceBreaks
   >>
   \layout {}
 }
