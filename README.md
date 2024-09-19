@@ -1,5 +1,5 @@
 # chopin-opus-29
-These are the engraving source files used to create the Chopin Impromptu, opus 29.
+This is the engraving source file used to create the Chopin Impromptu, opus 29.
 
 ## Creating the PDF and MIDI files
 (I highly recommend the [Frescobaldi](https://www.frescobaldi.org/) IDE for LilyPond.  It makes all of the following much easier.)

@@ -802,7 +802,7 @@ dynamics = {
   s2... s16\! |
   s1 |
   s2 s-\tweak X-offset -1.5 ^\ritenuto |
-  s1 % \p | <-- retstore "P"
+  s1 \p |
   s1 |
   
   \barNumberCheck 49
@@ -1025,7 +1025,7 @@ tempi = {
   \tempo 4 = 128 s1 |
   \tempo 4 = 136 s1 |
   \tempo 4 = 144 s1 |
-  \tempo 4 = 152 s1|
+  \tempo 4 = 152 s1 |
   \tempo 4 = 160 s1 |
   \tempo 4 = 168 s2 s8 \tempo 4 = 40 s8 \tempo 4 = 144 s4 |
   s1 * 2 |
@@ -1112,7 +1112,7 @@ forceBreaks = {
 \layout {
   \context {
     \Score
-    % \omit BarNumber <-- uncomments me
+    \omit BarNumber
     \override Slur.details.free-head-distance = 1
   }
   \context {
